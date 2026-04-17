@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── DataClean Brand Palette ──────────────────────────────────────────────
+   #0B0C10  deepest background
+   #1F2833  card / panel background
+   #C5C6C7  primary text on dark
+   #5B66E2  indigo accent (primary interactive color)
+   #4A55D1  dark indigo (secondary accent / hover)
+   ──────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --font-size: 16px;
+
+  /* Light mode */
+  --background: #f4f7f9;
+  --foreground: #1f2833;
+  --card: #ffffff;
+  --card-foreground: #1f2833;
+  --popover: #ffffff;
+  --popover-foreground: #1f2833;
+  --primary: #5b66e2;
+  --primary-foreground: #ffffff;
+  --secondary: #e2ecee;
+  --secondary-foreground: #1f2833;
+  --muted: #e9f0f0;
+  --muted-foreground: #5a6e6e;
+  --accent: #4a55d1;
+  --accent-foreground: #ffffff;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(31, 40, 51, 0.12);
+  --input: #f0f6f6;
+  --input-background: #f0f6f6;
+  --ring: #5b66e2;
+
+  --chart-1: #5b66e2;
+  --chart-2: #8b96f2;
+  --chart-3: #4a55d1;
+  --chart-4: #7b86e8;
+  --chart-5: #939393;
+
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar-background: rgba(7, 13, 18, 0.85);
+  --sidebar-foreground: #939393;
+  --sidebar-primary: #5b66e2;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(255, 255, 255, 0.08);
+  --sidebar-accent-foreground: #e5e5e8;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #5b66e2;
+}
+
+.dark {
+  --background: #070d12;
+  --foreground: #e5e5e8;
+  --card: rgba(20, 22, 36, 0.80);
+  --card-foreground: #e5e5e8;
+  --popover: rgba(10, 12, 20, 0.95);
+  --popover-foreground: #e5e5e8;
+  --primary: #5b66e2;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(30, 32, 50, 0.60);
+  --secondary-foreground: #e5e5e8;
+  --muted: rgba(30, 32, 50, 0.60);
+  --muted-foreground: #939393;
+  --accent: #4a55d1;
+  --accent-foreground: #ffffff;
+  --destructive: #f05060;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(172, 172, 172, 0.20);
+  --input-background: rgba(172, 172, 172, 0.20);
+  --ring: #5b66e2;
+
+  --chart-1: #5b66e2;
+  --chart-2: #8b96f2;
+  --chart-3: #4a55d1;
+  --chart-4: #7b86e8;
+  --chart-5: #939393;
+
+  --sidebar-background: rgba(7, 13, 18, 0.85);
+  --sidebar-foreground: #939393;
+  --sidebar-primary: #5b66e2;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(255, 255, 255, 0.08);
+  --sidebar-accent-foreground: #e5e5e8;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #5b66e2;
+}
+
+@theme inline {
+  --font-sans: var(--font-jeko), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jeko), ui-sans-serif, system-ui, sans-serif;
+  --font-ui: var(--font-jeko), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  [data-slot="card"] {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  html {
+    font-size: var(--font-size);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  caption, label, .badge, .tag {
+    font-family: var(--font-ui);
+  }
+}
+
+/* ── Entrance animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out both;
+}
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out both;
+}
+
+.stagger-children > * { animation: fadeInUp 0.45s ease-out both; }
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.10s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.20s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.30s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.40s; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(107, 114, 128, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.5);
+}
