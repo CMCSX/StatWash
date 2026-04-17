@@ -84,7 +84,7 @@ export function CleaningSummary({ result }: Props) {
           return (
             <div
               key={card.label}
-              className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-4"
+              className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4"
             >
               <div className="flex items-center gap-2 mb-2">
                 <div className={`rounded-lg p-1.5 ${card.bg}`}>
@@ -104,7 +104,7 @@ export function CleaningSummary({ result }: Props) {
 
       {/* Transformations log */}
       {transformations.length > 0 && (
-        <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5">
+        <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5">
           <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
             <ArrowRightLeft className="h-4 w-4 text-[#5B66E2]" />
             Transformations Applied

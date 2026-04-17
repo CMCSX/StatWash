@@ -7,7 +7,7 @@ export function TopBar() {
   const { fileName, result } = useCleaning();
 
   return (
-    <header className="sticky top-0 z-[60] flex h-16 items-center justify-between border-b bg-white/75 dark:bg-[rgba(7,13,18,0.75)] backdrop-blur-xl border-gray-200 dark:border-white/10 px-4 sm:px-6">
+    <header className="sticky top-0 z-[60] flex h-16 items-center justify-between border-b bg-white dark:bg-[#070D12] border-gray-200 dark:border-white/10 px-4 sm:px-6">
       {/* Left: logo + file name */}
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-2">

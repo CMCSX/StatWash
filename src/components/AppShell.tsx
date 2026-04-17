@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { SidebarProvider } from "@/context/SidebarContext";
 import { CleaningProvider } from "@/context/CleaningContext";
+import { EditingProvider } from "@/context/EditingContext";
 import { Sidebar } from "@/components/Sidebar";
 import { MainContent } from "@/components/MainContent";
 import { Toaster } from "sonner";
@@ -18,7 +19,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <CleaningProvider>
-      <SidebarProvider>
+      <EditingProvider>
+        <SidebarProvider>
         {/* Fixed blurred background */}
         <div
           className="fixed inset-0 z-0 overflow-hidden"
@@ -42,6 +44,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
         <Toaster position="bottom-right" />
       </SidebarProvider>
+      </EditingProvider>
     </CleaningProvider>
   );
 }

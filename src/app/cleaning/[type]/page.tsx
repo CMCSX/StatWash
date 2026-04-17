@@ -160,7 +160,7 @@ export default function CleaningTypePage({
       </div>
 
       {/* Expected Columns */}
-      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm overflow-hidden mb-6">
+      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 overflow-hidden mb-6">
         <div className="px-5 py-4 border-b border-gray-200 dark:border-white/10">
           <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
             Expected Columns ({config.expectedColumns.length})
@@ -194,7 +194,7 @@ export default function CleaningTypePage({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Date Columns */}
         {config.dateColumns.length > 0 && (
-          <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5">
+          <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
               Date Columns
             </h3>
@@ -214,7 +214,7 @@ export default function CleaningTypePage({
 
         {/* Numeric Columns */}
         {config.numericColumns.length > 0 && (
-          <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5">
+          <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
               Numeric Columns
             </h3>
@@ -234,7 +234,7 @@ export default function CleaningTypePage({
 
         {/* Text Casing Rules */}
         {Object.keys(config.textCasingRules).length > 0 && (
-          <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5">
+          <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
               Text Casing Rules
             </h3>
@@ -253,7 +253,7 @@ export default function CleaningTypePage({
         )}
 
         {/* Header Signatures */}
-        <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5">
+        <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5">
           <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
             Detection Signatures
           </h3>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback, useEffect, useRef } from "react";
+import { useMemo, useState, useCallback, useEffect, useRef, memo } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -21,7 +21,7 @@ interface Props {
 
 const PAGE_SIZE = 25;
 
-export function DataPreview({ result, showCleaned, highlightedRow, onHighlightClear }: Props) {
+export const DataPreview = memo(function DataPreview({ result, showCleaned, highlightedRow, onHighlightClear }: Props) {
   const [page, setPage] = useState(0);
   const [sortCol, setSortCol] = useState<string | null>(null);
   const [sortAsc, setSortAsc] = useState(true);
@@ -79,7 +79,7 @@ export function DataPreview({ result, showCleaned, highlightedRow, onHighlightCl
     if (highlightedRow != null && highlightRef.current) {
       highlightRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
     }
-  });
+  }, [highlightedRow, page]);
 
   const handleHeaderClick = useCallback(
     (col: string) => {
@@ -103,7 +103,7 @@ export function DataPreview({ result, showCleaned, highlightedRow, onHighlightCl
   }
 
   return (
-    <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm overflow-hidden">
+    <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 overflow-hidden">
       {/* Table container */}
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
@@ -225,7 +225,7 @@ export function DataPreview({ result, showCleaned, highlightedRow, onHighlightCl
       </div>
     </div>
   );
-}
+});
 
 function PaginationButton({
   children,

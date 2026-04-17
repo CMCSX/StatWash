@@ -6,19 +6,12 @@ import {
   useState,
   useCallback,
   useMemo,
-  useEffect,
-  useRef,
   type ReactNode,
 } from "react";
 import type { CleaningResult } from "@/types";
 import { parseExcelFile } from "@/services/fileParser";
 import { detectFileType, cleanData } from "@/services/cleaningEngine";
 import { getTemplate } from "@/services/templateStore";
-import {
-  saveSessionFiles,
-  loadSessionFiles,
-  clearSessionFiles,
-} from "@/services/sessionStore";
 
 interface FileEntry {
   fileName: string;
@@ -54,31 +47,6 @@ export function CleaningProvider({ children }: { children: ReactNode }) {
   const [files, setFiles] = useState<FileEntry[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
-  const hasLoadedRef = useRef(false);
-
-  // Load persisted files on mount
-  useEffect(() => {
-    if (hasLoadedRef.current) return;
-    hasLoadedRef.current = true;
-    loadSessionFiles()
-      .then((stored) => {
-        if (stored.length > 0) {
-          setFiles(stored);
-          setActiveIndex(0);
-        }
-      })
-      .catch(() => {
-        // IndexedDB unavailable — ignore
-      });
-  }, []);
-
-  // Auto-save files to IndexedDB whenever files change
-  useEffect(() => {
-    if (!hasLoadedRef.current) return;
-    saveSessionFiles(files).catch(() => {
-      // IndexedDB unavailable — ignore
-    });
-  }, [files]);
 
   const processFile = useCallback(async (file: File) => {
     setIsProcessing(true);
@@ -169,7 +137,6 @@ export function CleaningProvider({ children }: { children: ReactNode }) {
     setFiles([]);
     setActiveIndex(0);
     setIsProcessing(false);
-    clearSessionFiles().catch(() => {});
   }, []);
 
   const activeFile = files[activeIndex] ?? null;

@@ -109,7 +109,7 @@ export default function SettingsPage() {
           {/* LEFT COLUMN: Appearance + About */}
           <div className="flex flex-col gap-4 animate-fade-in-up" style={{ animationDelay: "0.05s" }}>
             {/* Appearance */}
-            <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5">
+            <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5">
               <div className="flex items-center gap-2.5 mb-4">
                 <div className="rounded-lg bg-amber-500/10 p-1.5">
                   <Palette className="h-4 w-4 text-amber-500" />
@@ -145,7 +145,7 @@ export default function SettingsPage() {
             </div>
 
             {/* About */}
-            <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5">
+            <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5">
               <div className="flex items-center gap-2.5 mb-4">
                 <div className="rounded-lg bg-emerald-500/10 p-1.5">
                   <Shield className="h-4 w-4 text-emerald-500" />
@@ -172,7 +172,7 @@ export default function SettingsPage() {
 
           {/* RIGHT COLUMN: Templates */}
           <div
-            className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm overflow-hidden animate-fade-in-up"
+            className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 overflow-hidden animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
             <div className="px-6 py-5 border-b border-gray-200 dark:border-white/10">

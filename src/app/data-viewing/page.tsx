@@ -1,6 +1,6 @@
-﻿"use client";
+"use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useMemo } from "react";
 import {
   Download,
   FileDown,
@@ -65,7 +65,9 @@ export default function DataViewingPage() {
     setShowExportMenu(false);
   }, [result, fileName, showCleaned]);
 
-  const statCards = result
+  const handleHighlightClear = useCallback(() => setHighlightedRow(null), []);
+
+  const statCards = useMemo(() => result
     ? [
         { label: "Total Rows", value: result.summary.totalRows, icon: Layers, color: "text-[#5B66E2]", bg: "bg-gradient-to-br from-[#5B66E2]/15 to-[#8B96F2]/10", accent: "border-l-[#5B66E2]" },
         { label: "Clean Rows", value: result.summary.cleanRows, icon: ShieldCheck, color: "text-emerald-500", bg: "bg-gradient-to-br from-emerald-500/15 to-emerald-400/10", accent: "border-l-emerald-500" },
@@ -74,7 +76,7 @@ export default function DataViewingPage() {
         { label: "Duplicates Removed", value: result.summary.duplicatesRemoved, icon: Trash2, color: "text-orange-500", bg: "bg-gradient-to-br from-orange-500/15 to-orange-400/10", accent: "border-l-orange-500" },
         { label: "Transformations", value: result.summary.transformationsApplied, icon: Repeat2, color: "text-[#8B96F2]", bg: "bg-gradient-to-br from-[#8B96F2]/15 to-[#5B66E2]/10", accent: "border-l-[#8B96F2]" },
       ]
-    : [];
+    : [], [result]);
 
   return (
     <div className="px-4 sm:px-8 py-8">
@@ -92,7 +94,7 @@ export default function DataViewingPage() {
             </p>
           </div>
 
-          {/* File tabs next to title — max 4 visible, horizontally scrollable, draggable */}
+          {/* File tabs next to title � max 4 visible, horizontally scrollable, draggable */}
           {files.length > 0 && (
             <div className="flex items-center gap-1 self-end">
               <div
@@ -239,7 +241,7 @@ export default function DataViewingPage() {
                 return (
                   <div
                     key={card.label}
-                    className={`rounded-xl border border-gray-200 dark:border-white/10 border-l-[3px] ${card.accent} bg-white/60 dark:bg-white/5 backdrop-blur-sm p-4 flex flex-col justify-center transition-shadow hover:shadow-md`}
+                    className={`rounded-xl border border-gray-200 dark:border-white/10 border-l-[3px] ${card.accent} bg-white/60 dark:bg-white/5 p-4 flex flex-col justify-center transition-shadow hover:shadow-md`}
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <div className={`rounded-xl p-2 ${card.bg}`}>
@@ -258,7 +260,7 @@ export default function DataViewingPage() {
             </div>
 
             {/* Center: Transformations & Notifications */}
-            <div className="flex-1 min-w-0 h-full rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm overflow-hidden flex flex-col">
+            <div className="flex-1 min-w-0 h-full rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 overflow-hidden flex flex-col">
               {/* Header */}
               <div className="flex w-full items-center justify-between px-5 py-4">
                 <div className="flex items-center gap-3">
@@ -319,7 +321,7 @@ export default function DataViewingPage() {
                 ({showCleaned ? "Cleaned" : "Original"} \u2014 {showCleaned ? result.cleanedData.length : result.originalData.length} rows)
               </span>
             </h2>
-            <DataPreview result={result} showCleaned={showCleaned} highlightedRow={highlightedRow} onHighlightClear={() => setHighlightedRow(null)} />
+            <DataPreview result={result} showCleaned={showCleaned} highlightedRow={highlightedRow} onHighlightClear={handleHighlightClear} />
           </div>
         </div>
       )}

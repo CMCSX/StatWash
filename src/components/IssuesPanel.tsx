@@ -68,7 +68,7 @@ export function IssuesPanel({ issues, onIssueClick }: Props) {
   if (issues.length === 0) return null;
 
   return (
-    <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-sm overflow-hidden flex flex-col h-full">
+    <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 overflow-hidden flex flex-col h-full">
       {/* Header */}
       <div className="flex w-full items-center justify-between px-5 py-4 flex-shrink-0">
         <div className="flex items-center gap-3">
