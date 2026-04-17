@@ -49,8 +49,8 @@ export interface CleaningSummary {
 }
 
 export interface CleaningResult {
-  originalData: Record<string, string | number | null>[];
-  cleanedData: Record<string, string | number | null>[];
+  originalData: Record<string, unknown>[];
+  cleanedData: Record<string, unknown>[];
   issues: CleaningIssue[];
   transformations: TransformationLog[];
   summary: CleaningSummary;

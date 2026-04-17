@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  LayoutDashboard,
-  Upload,
   Settings,
   Table,
   Sparkles,
@@ -22,12 +20,6 @@ const cleaningSubItems = [
   { path: "/cleaning/ptp-inventory-bel", label: "PTP Inventory BEL" },
   { path: "/cleaning/cards-attendance", label: "Cards Attendance" },
   { path: "/cleaning/field-visit-report-bel", label: "Field Visit Report BEL" },
-];
-
-const menuItems = [
-  { path: "/data-viewing", icon: Table, label: "Data Viewing" },
-  { path: "/upload", icon: Upload, label: "Upload" },
-  { path: "/settings", icon: Settings, label: "Settings" },
 ];
 
 export function Sidebar() {

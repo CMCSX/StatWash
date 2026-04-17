@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   AlertTriangle,
   XCircle,
-  Info,
   ArrowRight,
   Database,
 } from "lucide-react";

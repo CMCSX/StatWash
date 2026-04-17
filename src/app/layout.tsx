@@ -14,7 +14,7 @@ const jeko = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "StatWash — Excel Data Cleaning Tool",
   description:
-    "Upload, clean, standardize, and export structured data from raw Excel sheets. Fully client-side — no data leaves your machine.",
+    "StatWash — Upload, clean, standardize, and export structured data from raw Excel sheets. Fully client-side — no data leaves your machine.",
 };
 
 export default function RootLayout({

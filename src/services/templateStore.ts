@@ -24,6 +24,12 @@ export interface StoredTemplate {
 }
 
 function openDB(): Promise<IDBDatabase> {
+  // Clean up old database from rename
+  try {
+    indexedDB.deleteDatabase("DataCleanTemplates");
+  } catch {
+    // ignore
+  }
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
     request.onupgradeneeded = () => {

@@ -223,7 +223,7 @@ export function cleanData(
       for (const col of dateCols) {
         const val = newRow[col];
         if (val === null || val === undefined || String(val).trim() === "") continue;
-        const normalized = normalizeDate(val);
+        const normalized = normalizeDate(val as string | number | null);
         if (normalized) {
           if (normalized !== String(val).trim()) {
             dateFixCount++;
@@ -236,7 +236,7 @@ export function cleanData(
             type: "invalid_format",
             severity: "error",
             message: `Invalid date format: "${val}"`,
-            originalValue: val,
+            originalValue: val as string | number | null,
           });
         }
       }
@@ -272,7 +272,7 @@ export function cleanData(
             type: "type_mismatch",
             severity: "error",
             message: `Expected numeric value, got: "${val}"`,
-            originalValue: val,
+            originalValue: val as string | number | null,
           });
         }
       }
@@ -299,7 +299,7 @@ export function cleanData(
             type: "missing",
             severity: "error",
             message: `Required field "${field}" is empty`,
-            originalValue: val ?? null,
+            originalValue: (val as string | number | null) ?? null,
           });
         }
       }

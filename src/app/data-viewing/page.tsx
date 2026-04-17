@@ -219,11 +219,11 @@ export default function DataViewingPage() {
             Upload and clean an Excel file first, then come back here to view, inspect, and export the results.
           </p>
           <Link
-            href="/upload"
+            href="/cleaning/account-status-bel"
             className="flex items-center gap-2 rounded-lg bg-[#5B66E2] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#4A55D1] transition-colors shadow-lg shadow-[#5B66E2]/30"
           >
             <Upload className="h-4 w-4" />
-            Go to Upload
+            Go to Cleaning
           </Link>
         </div>
       )}

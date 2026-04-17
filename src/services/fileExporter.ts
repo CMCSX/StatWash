@@ -1,6 +1,6 @@
 import * as XLSX from "xlsx";
 
-type Row = Record<string, string | number | null>;
+type Row = Record<string, unknown>;
 
 /**
  * Export cleaned data as an Excel file (.xlsx).
