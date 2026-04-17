@@ -6,7 +6,7 @@
 
 import type { FileType } from "@/types";
 
-const DB_NAME = "DataCleanTemplates";
+const DB_NAME = "StatWashTemplates";
 const DB_VERSION = 1;
 const STORE_NAME = "templates";
 

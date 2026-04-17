@@ -5,7 +5,7 @@
 
 import type { CleaningResult } from "@/types";
 
-const DB_NAME = "DataCleanSession";
+const DB_NAME = "StatWashSession";
 const DB_VERSION = 1;
 const STORE_NAME = "files";
 

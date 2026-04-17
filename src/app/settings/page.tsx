@@ -151,7 +151,7 @@ export default function SettingsPage() {
                   <Shield className="h-4 w-4 text-emerald-500" />
                 </div>
                 <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
-                  About DataClean
+                  About StatWash
                 </h2>
               </div>
               <div className="space-y-2.5 text-xs text-gray-600 dark:text-[#939393] leading-relaxed">

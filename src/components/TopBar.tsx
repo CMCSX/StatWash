@@ -15,7 +15,7 @@ export function TopBar() {
             <Sparkles className="h-4 w-4 text-white" />
           </div>
           <span className="text-lg font-semibold text-gray-900 dark:text-white">
-            DataClean
+            StatWash
           </span>
         </div>
         {fileName && (
