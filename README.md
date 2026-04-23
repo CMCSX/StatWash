@@ -1,24 +1,24 @@
 # StatWash — Excel Data Cleaning Tool
 
-StatWash is a modern, privacy-first web application designed to clean, standardize, and export structured data from raw Excel sheets. **All processing happens locally on your machine** — no data ever leaves your browser.
+StatWash is a web application designed to clean, standardize, and export structured data from raw Excel sheets. All processing happens locally on your machine — no data ever leaves your browser.
 
-## 🎯 Overview
+## Overview
 
-StatWash automates the tedious process of data cleaning and validation. It intelligently detects file types, normalizes column names, validates data formats, identifies issues, and exports cleaned results—all with a user-friendly interface.
+StatWash automates the process of data cleaning and validation. It intelligently detects file types, normalizes column names, validates data formats, identifies issues, and exports cleaned results with a user-friendly interface.
 
 ### Key Features
 
-- 🔒 **Privacy-First**: 100% client-side processing. No data is sent to servers.
-- 🤖 **Smart Detection**: Automatically identifies file types from headers.
-- ✨ **Intelligent Cleaning**: Standardizes column names, normalizes dates, validates formats, removes duplicates, and applies transformations.
-- 📋 **Template-Based**: Upload reference templates for each file type to guide cleaning rules.
-- 📊 **Data Preview**: View original and cleaned data side-by-side with detailed issue reports.
-- 💾 **Flexible Export**: Download cleaned data as Excel (.xlsx) or CSV (.csv) files.
-- 🌓 **Dark Mode**: Light and dark theme support for comfortable use.
+- Privacy-First: 100% client-side processing. No data is sent to servers.
+- Smart Detection: Automatically identifies file types from headers.
+- Intelligent Cleaning: Standardizes column names, normalizes dates, validates formats, removes duplicates, and applies transformations.
+- Template-Based: Upload reference templates for each file type to guide cleaning rules.
+- Data Preview: View original and cleaned data side-by-side with detailed issue reports.
+- Flexible Export: Download cleaned data as Excel (.xlsx) or CSV (.csv) files.
+- Dark Mode: Light and dark theme support for comfortable use.
 
 ---
 
-## 📁 Supported File Types
+## Supported File Types
 
 StatWash supports the following file types:
 
@@ -34,7 +34,7 @@ StatWash supports the following file types:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Access the Application
 
@@ -51,7 +51,7 @@ The app is organized into four main sections accessible from the left sidebar:
 
 ---
 
-## 📋 Complete Workflow: Template Upload → Data Import → Data Export
+## Complete Workflow: Template Upload → Data Import → Data Export
 
 ### Step 1: Set Up Templates (Settings Page)
 
@@ -232,7 +232,7 @@ The app logs all automatic transformations for transparency:
 
 ---
 
-## 🛠️ Technical Architecture
+## Technical Architecture
 
 ### Technology Stack
 
@@ -255,15 +255,15 @@ The app logs all automatic transformations for transparency:
 
 ### Privacy & Security
 
-- ✅ No data transmitted to servers
-- ✅ No cookies or tracking
-- ✅ No external API calls with your data
-- ✅ Templates stored only in your browser
-- ✅ Clear browser storage to delete all local data
+- No data transmitted to servers
+- No cookies or tracking
+- No external API calls with your data
+- Templates stored only in your browser
+- Clear browser storage to delete all local data
 
 ---
 
-## 🎯 Best Practices
+## Best Practices
 
 ### For Template Management
 
@@ -290,7 +290,7 @@ The app logs all automatic transformations for transparency:
 
 ---
 
-## 🆘 Troubleshooting
+## Troubleshooting
 
 ### "File type not detected"
 
@@ -346,7 +346,7 @@ The app logs all automatic transformations for transparency:
 
 ---
 
-## 📊 Example Workflow
+## Example Workflow
 
 Here's a complete example of how to use StatWash:
 
@@ -377,7 +377,7 @@ Here's a complete example of how to use StatWash:
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### 5-Minute Setup
 
@@ -399,7 +399,7 @@ Here's a complete example of how to use StatWash:
 
 ---
 
-## 📝 Version Information
+## Version Information
 
 - **Version**: 1.0.0
 - **Framework**: Next.js 16.1.6
@@ -408,7 +408,7 @@ Here's a complete example of how to use StatWash:
 
 ---
 
-## 🤝 Support
+## Support
 
 For issues, questions, or feedback:
 
@@ -419,7 +419,7 @@ For issues, questions, or feedback:
 
 ---
 
-## 📋 FAQ
+## FAQ
 
 **Q: Is my data stored on a server?**  
 A: No. All processing and storage happens in your browser only.
@@ -453,7 +453,7 @@ A: Very accurate if headers match conventions. Manual selection available if nee
 
 ---
 
-## 🎨 Features Overview
+## Features Overview
 
 ### Settings Page
 - Upload and manage templates per file type
@@ -484,7 +484,7 @@ A: Very accurate if headers match conventions. Manual selection available if nee
 
 ---
 
-## 📚 Understanding Your Data
+## Understanding Your Data
 
 ### Column Names
 
@@ -517,7 +517,7 @@ Text is standardized based on column rules:
 
 ---
 
-## 🔄 Data Flow Diagram
+## Data Flow Diagram
 
 ```
 Upload File
@@ -541,4 +541,4 @@ Export (Excel or CSV Download)
 
 ---
 
-**Made with ❤️ for better data quality. All processing happens locally — your data is always private.**
+Made for better data quality. All processing happens locally — your data is always private.
