@@ -185,7 +185,7 @@ After cleaning, review your results and export the data in your preferred format
 
 ---
 
-## 🎓 Understanding the Cleaning Process
+## Understanding the Cleaning Process
 
 ### File Type Detection
 
@@ -229,37 +229,6 @@ The app logs all automatic transformations for transparency:
 - **fill_default**: Missing value was filled with default
 - **trim_whitespace**: Leading/trailing spaces removed
 - **convert_type**: Data type was converted
-
----
-
-## Technical Architecture
-
-### Technology Stack
-
-- **Frontend Framework**: Next.js 16.1.6 with React 19.2.3
-- **Styling**: Tailwind CSS with custom components
-- **Data Grid**: AG Grid (community edition)
-- **Data Export**: XLSX library for Excel support
-- **Local Storage**: IndexedDB for template persistence
-- **UI Components**: Radix UI primitive components
-- **Theme Support**: next-themes for dark mode
-- **Icons**: Lucide React
-
-### How It Works
-
-1. **Browser-Only Processing**: All operations run in your browser using JavaScript
-2. **No Server Communication**: Data never leaves your machine
-3. **IndexedDB Storage**: Templates are stored locally for quick access
-4. **Automatic Detection**: Machine learning-style pattern matching identifies file types
-5. **Streaming Processing**: Large files are processed efficiently in memory
-
-### Privacy & Security
-
-- No data transmitted to servers
-- No cookies or tracking
-- No external API calls with your data
-- Templates stored only in your browser
-- Clear browser storage to delete all local data
 
 ---
 
@@ -381,164 +350,18 @@ Here's a complete example of how to use StatWash:
 
 ### 5-Minute Setup
 
-1. **Open StatWash** → You're already in the app
-2. **Go to Settings** → Upload a template for your file type
-3. **Go to Cleaning** → Upload a data file
-4. **Wait for processing** → Review the cleaning summary
-5. **Go to Data Viewing** → Export your cleaned data
+1. **Open StatWash** — You're already in the app
+2. **Go to Settings** — Upload a template for your file type
+3. **Go to Cleaning** — Upload a data file
+4. **Wait for processing** — Review the cleaning summary
+5. **Go to Data Viewing** — Export your cleaned data
 
 ### First File Checklist
 
-- [ ] Template uploaded for file type
-- [ ] Data file uploaded successfully
-- [ ] File type correctly detected
-- [ ] Cleaning summary reviewed
-- [ ] No critical errors found
-- [ ] Data exported to desired format
-- [ ] Export file opened and verified
-
----
-
-## Version Information
-
-- **Version**: 1.0.0
-- **Framework**: Next.js 16.1.6
-- **React**: 19.2.3
-- **Node Version**: Requires Node.js 18+
-
----
-
-## Support
-
-For issues, questions, or feedback:
-
-1. **Check the Troubleshooting section** above
-2. **Review file type configuration** to ensure correct setup
-3. **Verify template quality** — templates directly affect cleaning quality
-4. **Test with sample data** — use known-good files first
-
----
-
-## FAQ
-
-**Q: Is my data stored on a server?**  
-A: No. All processing and storage happens in your browser only.
-
-**Q: Can I use this offline?**  
-A: Yes! Once loaded, StatWash works offline. Templates are stored locally.
-
-**Q: What file formats are supported?**  
-A: Currently Excel (.xlsx, .xls) and CSV files.
-
-**Q: Can I process multiple files at once?**  
-A: Yes. Upload multiple files and switch between them using tabs.
-
-**Q: What happens to my templates if I close the browser?**  
-A: They're saved in browser storage (IndexedDB) and will persist.
-
-**Q: Can I edit data after cleaning?**  
-A: Yes. Use the Editing page to make manual adjustments.
-
-**Q: How do I delete a template?**  
-A: Go to Settings, find the file type, and click the delete/remove button.
-
-**Q: Can I switch file types mid-clean?**  
-A: Yes. Go to Cleaning and select a different file type. Your current file will be reset.
-
-**Q: What's the maximum file size?**  
-A: Depends on your browser memory, typically 100MB+ files work fine.
-
-**Q: How accurate is file type detection?**  
-A: Very accurate if headers match conventions. Manual selection available if needed.
-
----
-
-## Features Overview
-
-### Settings Page
-- Upload and manage templates per file type
-- View template details (columns, sample rows, upload date)
-- Delete templates when needed
-- Track template versions
-
-### Cleaning Page
-- File type selection with descriptions
-- Drag-and-drop file upload
-- Real-time file type detection
-- Cleaning progress indicator
-- Detailed issue reporting
-
-### Data Viewing Page
-- Side-by-side original vs. cleaned data
-- Interactive data grid with sorting/filtering
-- Issues panel with severity indicators
-- Transformation log
-- Cleaning summary statistics
-- Export options (Excel/CSV)
-
-### Editing Page
-- Make manual corrections to cleaned data
-- Cell-by-cell editing
-- Undo/redo support
-- Bulk operations
-
----
-
-## Understanding Your Data
-
-### Column Names
-
-StatWash normalizes column names to standard formats:
-- Raw headers are mapped to canonical names
-- Variations are automatically recognized (e.g., "Acct No" → "Account Number")
-- Helps with consistency across different source files
-
-### Date Formats
-
-The app intelligently handles multiple date formats:
-- Converts to ISO standard format: `YYYY-MM-DD`
-- Recognizes: DD/MM/YYYY, MM/DD/YYYY, YYYY-MM-DD
-- Validates dates are within reasonable range (1900-2100)
-
-### Numeric Columns
-
-Numbers are validated and preserved:
-- Non-numeric values in numeric columns are flagged as errors
-- Whitespace is trimmed
-- Negative numbers and decimals are supported
-
-### Text Casing
-
-Text is standardized based on column rules:
-- **UPPERCASE**: For codes and identifiers
-- **Title Case**: For names and descriptions
-- **lowercase**: For codes that should be lowercase
-- **none**: Leave unchanged
-
----
-
-## Data Flow Diagram
-
-```
-Upload File
-    ↓
-Detect File Type (Header Analysis)
-    ↓
-Normalize Columns (Map Headers)
-    ↓
-Validate Data (Check Formats, Required Fields)
-    ↓
-Apply Transformations (Dates, Casing, Type Conversion)
-    ↓
-Identify Issues (Errors, Warnings, Info)
-    ↓
-Generate Summary (Statistics & Logs)
-    ↓
-Display Results (Original vs. Cleaned)
-    ↓
-Export (Excel or CSV Download)
-```
-
----
-
-Made for better data quality. All processing happens locally — your data is always private.
+- Template uploaded for file type
+- Data file uploaded successfully
+- File type correctly detected
+- Cleaning summary reviewed
+- No critical errors found
+- Data exported to desired format
+- Export file opened and verified
